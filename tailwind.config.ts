@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        route: {
+          primary: "hsl(var(--route-primary))",
+          secondary: "hsl(var(--route-secondary))",
+          tertiary: "hsl(var(--route-tertiary))",
+        },
+        pin: {
+          default: "hsl(var(--pin-default))",
+          selected: "hsl(var(--pin-selected))",
+          optimized: "hsl(var(--pin-optimized))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +75,44 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
+        "route-draw": {
+          "0%": { "stroke-dashoffset": "100%" },
+          "100%": { "stroke-dashoffset": "0%" }
+        },
+        "pin-bounce": {
+          "0%, 20%, 53%, 80%, 100%": { transform: "translate3d(0,0,0)" },
+          "40%, 43%": { transform: "translate3d(0,-8px,0)" },
+          "70%": { transform: "translate3d(0,-4px,0)" },
+          "90%": { transform: "translate3d(0,-2px,0)" }
+        },
+        "pulse-glow": {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.05)" }
+        },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "route-draw": "route-draw 1.5s ease-out forwards",
+        "pin-bounce": "pin-bounce 1s ease-in-out",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "fade-in": "fade-in 0.3s ease-out"
+      },
+      boxShadow: {
+        'soft': 'var(--shadow-soft)',
+        'medium': 'var(--shadow-medium)',
+        'large': 'var(--shadow-large)',
       },
     },
   },
